@@ -67,8 +67,8 @@ jobs:
             docker-compose up -d
 
             # Create a new database if it doesn't exist
-            docker exec stephanieh-portfolio-app-1 bundle exec rake db:create RAILS_ENV=production
+            docker exec stephaniehportfolio-app-1 bundle exec rake db:create RAILS_ENV=production
 
             # Run database migrations
-            docker exec stephanieh-portfolio-app-1 bundle exec rake db:migrate RAILS_ENV=production
+            docker exec stephaniehportfolio-app-1 bundle exec rake db:migrate RAILS_ENV=production
           EOF

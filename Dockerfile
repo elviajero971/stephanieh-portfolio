@@ -27,7 +27,9 @@ ARG RAILS_MASTER_KEY
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 
 # Install Bundler and the required gems
-RUN bundle install
+# Enable caching for Bundler
+RUN --mount=type=cache,target=/usr/local/bundle \
+    bundle install --jobs 4 --retry 3
 
 # Copy the entire Rails application into the container
 COPY . .
