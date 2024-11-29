@@ -1,0 +1,20 @@
+// Sassy
+
+@use "navbar";
+@use "footer";
+
+.hero-section {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.description-section {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.gallery-section {
+  padding: 50px;
+  background-color: #fff;
+}

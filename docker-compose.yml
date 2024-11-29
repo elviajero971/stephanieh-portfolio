@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    image: elviajero34/stephanieh-portfolio:latest
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./db/production.sqlite3:/app/db/production.sqlite3
+    command: bundle exec rails s -b '0.0.0.0' -p 3002
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - app
+    ports:
+      - "8082:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf

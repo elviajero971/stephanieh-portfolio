@@ -1,0 +1,24 @@
+fr:
+  navbar:
+    name: "Stéphanie El Hourany"
+    title: "Architecte D.E."
+    portfolio: "Portfolio"
+    gallery: "Galerie"
+    switch_language: "English"
+  footer:
+    contact_message: "Envie de collaborer ou de dire bonjour ?"
+    contact_cta: "Contactez-moi sur LinkedIn"
+  pages:
+    home:
+      hero_alt: "Page d'accueil"
+      title_1: "Architecte"
+      title_2: "Design et construction"
+      text: "Passionnée par l'architecture moderne et durable, mettant l'accent sur des conceptions harmonieuses avec l'environnement."
+    portfolio:
+      title: "Jean Dupont"
+      subtitle: "Architecte"
+      description: "Passionné par l'architecture moderne et durable, mettant l'accent sur des conceptions harmonieuses avec l'environnement."
+    gallery:
+      title: "Galerie d'images"
+      text_1: "Bienvenue dans mon univers !"
+      text_2: "des projets auxquels j’ai contribué, des chantiers auxquels j’ai participé, des formations et ateliers autour de techniques constructives ou matériaux (terre, terre-paille, charpente bois, maçonnerie traditionnelle, enduits à la chaux), des travaux que j’ai suivi, des actions ou événements dans lesquels j’ai été impliquée ..."
