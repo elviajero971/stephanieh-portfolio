@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     git \
     libvips \
-    sqlite3 \
+    sqlite3
 
 # Copy Gemfile and Gemfile.lock to Docker container
 COPY Gemfile Gemfile.lock ./
