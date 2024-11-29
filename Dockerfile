@@ -11,10 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     libvips \
     sqlite3 \
-    && curl -sL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install -g yarn \
-    && rm -rf /var/lib/apt/lists/*
 
 # Copy Gemfile and Gemfile.lock to Docker container
 COPY Gemfile Gemfile.lock ./
@@ -35,12 +31,6 @@ RUN bundle install
 
 # Copy the entire Rails application into the container
 COPY . .
-
-# Install JavaScript dependencies
-RUN yarn install
-
-# Build JavaScript assets
-RUN yarn build
 
 # Precompile Rails assets
 RUN bundle exec rake assets:precompile
