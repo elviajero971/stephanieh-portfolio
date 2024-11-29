@@ -28,34 +28,29 @@ jobs:
           --tag elviajero34/stephanieh-portfolio:latest . \
           --push
 
-      # Set up SSH for Raspberry Pi
-      - name: Set up SSH Key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.RASPBERRY_PI_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.RASPBERRY_PI_IP }} >> ~/.ssh/known_hosts
-
       # Transfer docker-compose.yml to Raspberry Pi
       - name: Transfer docker-compose.yml to Raspberry Pi
         env:
           RASPBERRY_PI_IP: ${{ secrets.RASPBERRY_PI_IP }}
+          RASPBERRY_PI_PASSWORD: ${{ secrets.RASPBERRY_PI_PASSWORD }}
         run: |
-          scp docker-compose.yml pi@$RASPBERRY_PI_IP:/var/www/html/stephaniehportfolio/
+          sshpass -p $RASPBERRY_PI_PASSWORD scp -o StrictHostKeyChecking=no docker-compose.yml pi@$RASPBERRY_PI_IP:/var/www/html/stephaniehportfolio/
 
       # Transfer nginx.conf to Raspberry Pi
       - name: Transfer nginx.conf to Raspberry Pi
         env:
           RASPBERRY_PI_IP: ${{ secrets.RASPBERRY_PI_IP }}
+          RASPBERRY_PI_PASSWORD: ${{ secrets.RASPBERRY_PI_PASSWORD }}
         run: |
-          scp nginx.conf pi@$RASPBERRY_PI_IP:/var/www/html/stephaniehportfolio/
+          sshpass -p $RASPBERRY_PI_PASSWORD scp -o StrictHostKeyChecking=no nginx.conf pi@$RASPBERRY_PI_IP:/var/www/html/stephaniehportfolio/
 
       # Deploy the application on Raspberry Pi
       - name: SSH into Raspberry Pi and deploy
         env:
           RASPBERRY_PI_IP: ${{ secrets.RASPBERRY_PI_IP }}
+          RASPBERRY_PI_PASSWORD: ${{ secrets.RASPBERRY_PI_PASSWORD }}
         run: |
-          ssh pi@$RASPBERRY_PI_IP << 'EOF'
+          sshpass -p $RASPBERRY_PI_PASSWORD ssh -o StrictHostKeyChecking=no  pi@$RASPBERRY_PI_IP << 'EOF'
             # Pull the latest Docker image from Docker Hub
             docker pull elviajero34/stephanieh-portfolio:latest
 
