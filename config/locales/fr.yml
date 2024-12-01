@@ -10,15 +10,13 @@ fr:
     contact_cta: "Contactez-moi sur LinkedIn"
   pages:
     home:
-      hero_alt: "Page d'accueil"
-      title_1: "Architecte"
-      title_2: "Design et construction"
-      text: "Passionnée par l'architecture moderne et durable, mettant l'accent sur des conceptions harmonieuses avec l'environnement."
+      title: "Architecte"
+      text_1: "Architecte diplômée de l’ENSA Montpellier, avec une solide expérience de terrain et une sensibilité envers les enjeux écologiques dans le bâtiment."
+      text_2: "Je m’adapte à des projets variés allant de la conception de bâtiments tertiaires à la réhabilitation de logements ou établissements culturels. Mon approche repose sur l’utilisation active des technologies pour optimiser mes processus, et sur une gestion rigoureuse de chaque projet"
+      text_3: "Co-fondatrice de U/LAb, laboratoire urbain pour les pratiques émergentes dans le métier, je suis engagée pour une architecture où coexistent approche humaine et passion pour l’acte de “construire”."
     portfolio:
-      title: "Jean Dupont"
-      subtitle: "Architecte"
-      description: "Passionné par l'architecture moderne et durable, mettant l'accent sur des conceptions harmonieuses avec l'environnement."
+      title: "Portfolio d'architecture"
     gallery:
       title: "Galerie d'images"
       text_1: "Bienvenue dans mon univers !"
-      text_2: "des projets auxquels j’ai contribué, des chantiers auxquels j’ai participé, des formations et ateliers autour de techniques constructives ou matériaux (terre, terre-paille, charpente bois, maçonnerie traditionnelle, enduits à la chaux), des travaux que j’ai suivi, des actions ou événements dans lesquels j’ai été impliquée ..."
+      text_2: "Des projets auxquels j’ai contribué, des chantiers auxquels j’ai participé, des formations et ateliers autour de techniques constructives ou matériaux (terre, terre-paille, charpente bois, maçonnerie traditionnelle, enduits à la chaux), des travaux que j’ai suivi, des actions ou événements dans lesquels j’ai été impliquée ..."

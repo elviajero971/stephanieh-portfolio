@@ -2,5 +2,17 @@
   <div class="hero-landing">
     <%= image_tag('landing.png', alt: t('pages.home.hero_alt'), class: 'hero-landing-image') %>
   </div>
-  <h1><%= t('pages.home.title') %></h1>
+  <div class="content">
+    <div class="content-left">
+      <%= image_tag('profile-pic.png', alt: t('pages.home.hero_alt'), class: 'profile-picture') %>
+    </div>
+    <div class="content-right">
+      <h1><%= t('pages.home.title') %></h1>
+      <div class="content-text">
+        <p><%= t('pages.home.text_1') %></p>
+        <p><%= t('pages.home.text_2') %></p>
+        <p><%= t('pages.home.text_3') %></p>
+      </div>
+    </div>
+  </div>
 </section>

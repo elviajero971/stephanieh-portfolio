@@ -1,9 +1,9 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <a href="/" class="navbar-brand">
+    <%= link_to root_path, class: 'nav-link' do %>
       <p class="name"><%= t('navbar.name') %></p>
       <p class="title"><%= t('navbar.title') %></p>
-    </a>
+    <% end %>
   </div>
   <div class="navbar-right">
     <%= link_to t('navbar.portfolio'), portfolio_path, class: 'nav-link' %>

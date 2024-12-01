@@ -1,0 +1,104 @@
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+
+  .portfolio-content {
+    margin: 0 94px;
+    text-align: center;
+    justify-content: center;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .portfolio-images {
+      display: flex;
+      flex-direction: column; /* Stack images vertically */
+      gap: 30px; /* Space between images */
+      align-items: center; /* Center images horizontally */
+      justify-content: center;
+
+      .portfolio-image {
+        width: 100%; /* Full width */
+        height: auto; /* Maintain aspect ratio */
+        cursor: zoom-in; /* Change pointer to zoom */
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05); /* Slight zoom on hover */
+        }
+      }
+    }
+  }
+}
+
+/* Modal Styling */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden; /* Prevent default modal scrolling */
+
+  &.active {
+    display: flex; /* Show modal when active */
+  }
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .image-wrapper {
+    // i want the image to fit the screen at first and then when i zoom in it can be scrolled because it is bigger than the screen size
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: auto; /* Enable scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-image {
+      transform-origin: center;
+      transition: transform 0.3s ease; /* Smooth zooming */
+    }
+  }
+
+  .zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+
+    button {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #0077b5;
+        color: #fff;
+      }
+    }
+  }
+}
+

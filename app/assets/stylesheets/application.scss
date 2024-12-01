@@ -3,18 +3,18 @@
 @use "navbar";
 @use "footer";
 
-.hero-section {
-  text-align: center;
-  background-color: #f4f4f4;
+@use "home";
+@use "portfolio";
+@use "gallery";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
-.description-section {
+body {
   display: flex;
-  align-items: center;
-  padding: 50px;
-}
-
-.gallery-section {
-  padding: 50px;
-  background-color: #fff;
+  flex-direction: column;
 }

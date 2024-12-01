@@ -1,0 +1,122 @@
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .hero-landing {
+    height: calc(100vh - 60px); /* Full view height minus navbar */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-landing-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Spacing between columns */
+    margin: 54px 0;
+    width: 100%;
+    max-width: 1200px; /* Limit content width for better layout */
+
+    .content-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 60px;
+
+      .profile-picture {
+        width: 274px;
+        height: 274px;
+        border-radius: 50%; /* Make it circular */
+        object-fit: cover;
+      }
+    }
+
+    .content-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 2rem; /* Adjust for title size */
+        font-weight: 700; /* Bold title */
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      .content-text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+          font-size: 1.2rem; /* Adjust for subtitle size */
+          font-weight: 400; /* Regular weight for subtitle */
+          color: #555;
+          line-height: 1.6; /* Adjust for readability */
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: auto; /* Allow the section to expand naturally */
+    padding: 15px;
+
+    .hero-landing {
+      height: auto;
+    }
+
+    .content {
+      flex-direction: column; /* Stack columns vertically */
+      gap: 20px;
+
+      .content-left .profile-picture {
+        width: 100px;
+        height: 100px;
+      }
+
+      .content-right {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    .content-left .profile-picture {
+      width: 80px;
+      height: 80px;
+    }
+
+    .content-right {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
