@@ -100,3 +100,31 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .portfolio-section {
+    .portfolio-content {
+      margin: 0 20px;
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .portfolio-images {
+        gap: 1.5rem;
+      }
+    }
+  }
+
+  .image-modal {
+    .close-button {
+      top: 10px;
+      right: 10px;
+    }
+
+    .zoom-controls {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+}
