@@ -49,17 +49,16 @@
 
 @media screen and (max-width: 768px) {
   .navbar {
-    height: 60px;
     padding: 0 30px;
     .navbar-right {
       display: none; /* Hide menu by default */
       flex-direction: column;
       background-color: white;
       position: absolute;
-      top: 70%;
+      top: 80%;
       right: 30px;
-      padding: 10px;
-      gap: 10px;
+      padding: 30px;
+      gap: 30px;
       border: 1px solid #ddd;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }

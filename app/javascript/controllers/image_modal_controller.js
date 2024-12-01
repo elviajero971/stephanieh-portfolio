@@ -23,12 +23,19 @@ export default class extends Controller {
         this.zoomLevel = 1; // Reset zoom level to default
         this.updateTransform();
         this.modalTarget.classList.add("active");
+
+        // Disable scrolling on the body
+        document.body.style.overflow = "hidden";
     }
 
     close() {
         this.modalTarget.classList.remove("active");
         this.imageTarget.src = ""; // Clear image source
         this.zoomLevel = 1; // Reset zoom level
+
+        // Enable scrolling on the body
+        document.body.style.overflow = "";
+        console.log("close() this.zoomLevel", this.zoomLevel);
     }
 
     zoomIn() {
@@ -36,6 +43,8 @@ export default class extends Controller {
             this.zoomLevel += 0.5; // Increment zoom level by 0.5
             this.updateTransform();
         }
+
+        console.log("zoomIn() this.zoomLevel", this.zoomLevel);
     }
 
     zoomOut() {
@@ -43,6 +52,8 @@ export default class extends Controller {
             this.zoomLevel -= 0.5; // Decrement zoom level by 0.5
             this.updateTransform();
         }
+
+        console.log("zoomOut() this.zoomLevel", this.zoomLevel);
     }
 
     updateTransform() {
@@ -50,9 +61,16 @@ export default class extends Controller {
             // Reset image size to fit the screen
             this.imageTarget.style.width = "100%";
             this.imageTarget.style.height = "auto";
+            this.imageTarget.style.position = "relative";
+            this.imageTarget.style.top = "0";
+            this.imageTarget.style.left = "0";
         } else {
-            // Apply zoom by scaling the image
-            this.imageTarget.style.transform = `scale(${this.zoomLevel})`;
+            // Scale the image relative to the zoom level
+            this.imageTarget.style.width = `${this.zoomLevel * 100}%`;
+            this.imageTarget.style.height = "auto";
+            this.imageTarget.style.position = "absolute";
+            this.imageTarget.style.top = "0";
+            this.imageTarget.style.left = "0";
         }
     }
 
@@ -60,5 +78,7 @@ export default class extends Controller {
         if (event.key === "Escape" && this.modalTarget.classList.contains("active")) {
             this.close();
         }
+
+        console.log("handleKeyDown() this.zoomLevel", this.zoomLevel);
     }
 }
