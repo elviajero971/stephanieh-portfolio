@@ -1,13 +1,16 @@
-<nav class="navbar">
+<nav class="navbar" data-controller="dropdown">
   <div class="navbar-left">
     <%= link_to root_path, class: 'nav-link' do %>
       <p class="name"><%= t('navbar.name') %></p>
       <p class="title"><%= t('navbar.title') %></p>
     <% end %>
   </div>
-  <div class="navbar-right">
+  <div class="navbar-right" data-dropdown-target="menu">
     <%= link_to t('navbar.portfolio'), portfolio_path, class: 'nav-link' %>
     <%= link_to t('navbar.gallery'), gallery_path, class: 'nav-link' %>
     <%#= link_to t('navbar.switch_language'), url_for(locale: I18n.locale == :en ? :fr : :en), class: 'nav-link' %>
   </div>
+  <button class="dropdown-toggle" data-action="click->dropdown#toggle" data-dropdown-target="button">
+    ☰
+  </button>
 </nav>

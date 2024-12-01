@@ -2,8 +2,9 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="image-modal"
 export default class extends Controller {
-    static targets = ["modal", "image"];
+    static targets = ["modal", "image", "imageWrapper"];
     zoomLevel = 1;
+    maxZoomLevel = 2; // Maximum zoom level (2x)
 
     connect() {
         console.log("Stimulus connected to image-modal controller");
@@ -19,7 +20,7 @@ export default class extends Controller {
         const imageSrc = event.currentTarget.dataset.imageModalSrc;
 
         this.imageTarget.src = imageSrc;
-        this.zoomLevel = 1;
+        this.zoomLevel = 1; // Reset zoom level to default
         this.updateTransform();
         this.modalTarget.classList.add("active");
     }
@@ -27,20 +28,32 @@ export default class extends Controller {
     close() {
         this.modalTarget.classList.remove("active");
         this.imageTarget.src = ""; // Clear image source
+        this.zoomLevel = 1; // Reset zoom level
     }
 
     zoomIn() {
-        this.zoomLevel += 0.2; // Increase zoom level
-        this.updateTransform();
+        if (this.zoomLevel < this.maxZoomLevel) {
+            this.zoomLevel += 0.5; // Increment zoom level by 0.5
+            this.updateTransform();
+        }
     }
 
     zoomOut() {
-        this.zoomLevel = Math.max(1, this.zoomLevel - 0.2); // Decrease zoom level, but not below 1
-        this.updateTransform();
+        if (this.zoomLevel > 1) {
+            this.zoomLevel -= 0.5; // Decrement zoom level by 0.5
+            this.updateTransform();
+        }
     }
 
     updateTransform() {
-        this.imageTarget.style.transform = `scale(${this.zoomLevel})`;
+        if (this.zoomLevel === 1) {
+            // Reset image size to fit the screen
+            this.imageTarget.style.width = "100%";
+            this.imageTarget.style.height = "auto";
+        } else {
+            // Apply zoom by scaling the image
+            this.imageTarget.style.transform = `scale(${this.zoomLevel})`;
+        }
     }
 
     handleKeyDown(event) {

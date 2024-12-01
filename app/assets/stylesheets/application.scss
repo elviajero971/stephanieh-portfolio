@@ -17,4 +17,38 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem; /* Adjust for title size */
+  font-weight: 700; /* Bold title */
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem; /* Adjust for paragraph size */
+  font-weight: 300; /* Light weight for paragraph */
+  color: #666;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }

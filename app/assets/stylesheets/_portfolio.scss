@@ -6,17 +6,16 @@
     margin: 0 94px;
     text-align: center;
     justify-content: center;
+    margin-bottom: 2rem;
 
     h1 {
-      font-size: 48px;
       margin-bottom: 40px;
-      color: #333;
     }
 
     .portfolio-images {
       display: flex;
       flex-direction: column; /* Stack images vertically */
-      gap: 30px; /* Space between images */
+      gap: 2.2rem; /* Space between images */
       align-items: center; /* Center images horizontally */
       justify-content: center;
 
@@ -46,7 +45,6 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
-  overflow: hidden; /* Prevent default modal scrolling */
 
   &.active {
     display: flex; /* Show modal when active */
@@ -63,15 +61,16 @@
   }
 
   .image-wrapper {
-    // i want the image to fit the screen at first and then when i zoom in it can be scrolled because it is bigger than the screen size
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100%;
+    height: 100%;
     overflow: auto; /* Enable scrolling */
     display: flex;
     justify-content: center;
     align-items: center;
 
     .modal-image {
+      width: 100%; /* Fit screen width by default */
+      height: auto; /* Maintain aspect ratio */
       transform-origin: center;
       transition: transform 0.3s ease; /* Smooth zooming */
     }
@@ -101,4 +100,3 @@
     }
   }
 }
-
