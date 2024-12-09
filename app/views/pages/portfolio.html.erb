@@ -6,8 +6,8 @@
         <div
           class="portfolio-image-container"
           data-action="click->image-modal#open"
-          data-image-modal-src="<%= asset_path("#{i}.jpg") %>">
-          <%= image_tag "#{i}.jpg", alt: "Image #{i}", class: "portfolio-image" %>
+          data-image-modal-src="<%= asset_path("portfolio/optimized_#{i}.png") %>">
+          <%= image_tag "portfolio/normal_optimized_#{i}.png", alt: "Image #{i}", class: "portfolio-image", loading: "lazy" %>
         </div>
       <% end %>
     </div>

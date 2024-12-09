@@ -110,6 +110,7 @@ GEM
       rake (>= 13)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    image_optimizer (1.9.0)
     importmap-rails (2.0.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   brakeman
   dartsass-rails
   debug
+  image_optimizer
   importmap-rails
   jbuilder
   puma (>= 5.0)
